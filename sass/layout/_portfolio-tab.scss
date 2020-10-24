@@ -1,0 +1,105 @@
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  &-nav-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    &-item:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.portfolio-btn {
+  background: $second-bg-color;
+  border-radius: 4px;
+  padding: 6px;
+
+  font-family: $primary-font;
+  @include font(500, 16px, 1.625, 0.03em);
+  text-align: center;
+  background: $second-bg-color;
+  border-style: none;
+  color: $secondary-font-color;
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $second-accent-font-color;
+    background-color: $accent-font-color;
+  }
+}
+
+.portfolio-examples {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-content {
+    padding: 20px 24px;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+  }
+
+  &-item {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  &-name {
+    margin-bottom: 4px;
+    @include font(700, 18px, 2, 0.06em);
+    color: $secondary-font-color;
+  }
+
+  &-description {
+    @include font(400, 16px, 1.875, 0.03em);
+    color: $primary-font-color;
+  }
+}
+
+.examples-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-right: 24px;
+  padding-left: 24px;
+  @include font(400, 18px, 1.56, 0.03em);
+  color: $second-accent-font-color;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(101%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .portfolio-examples-item:hover & {
+    transform: translateY(0%);
+  }
+}

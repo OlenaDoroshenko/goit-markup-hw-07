@@ -1,0 +1,28 @@
+.logo {
+  font-family: $secondary-font;
+  @include font(700, 26px, 1.192, 0.03em);
+
+  &-web {
+    color: $accent-font-color;
+  }
+
+  &-studio {
+    color: #000000;
+    .footer & {
+      color: $second-accent-font-color;
+    }
+  }
+
+  .header & {
+    margin-right: 93px;
+  }
+
+  &:focus {
+    font-family: $secondary-font;
+  }
+
+  .footer & {
+    display: block;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,6 @@
+.titles {
+  margin-bottom: 50px;
+  @include fond(700, 36px, 1.167, 00.03em);
+  text-align: center;
+  color: $secondary-font-color;
+}
